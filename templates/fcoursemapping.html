@@ -1,0 +1,69 @@
+{% extends 'adminhome.html' %}
+
+
+{% block 'body' %}
+
+<h3 align="center"><u>Faculty Mapping Courses</u></h3>
+
+
+
+<input class="form-control" id="myInput" type="text" placeholder="Coursetitle"><br>
+<table align="center" border="2" width="50"  height="50" class="table table-bordered table-striped">
+    <thead>
+    <tr bgcolor="lightblue" align="center">
+        <td>Faculty ID</td>
+         <td>Full Name</td>
+        <td>Department</td>
+        <td>Program</td>
+        <td>Academic Year</td>
+        <td>Semester</td>
+        <td>Year</td>
+        <td>Course Code</td>
+        <td>Course Title</td>
+        <td>LTPS</td>
+        <td>Credits</td>
+        <td>Component</td>
+        <td>Section</td>
+
+
+    </tr>
+    </thead>
+    <tbody  id="myTable">
+    {% for fcourse in  fcourses %}
+
+
+    <tr bgcolor="orange" align="center">
+       <td>{{fcourse.faculty.facultyid}}</td>
+        <td>{{fcourse.faculty.Fullname}}</td>
+         <td>{{fcourse.Course.department}}</td>
+        <td>{{fcourse.Course.program}}</td>
+         <td>{{fcourse.Course.academicyear}}</td>
+         <td>{{fcourse.Course.semester}}</td>
+         <td>{{fcourse.Course.Year}}</td>
+         <td>{{fcourse.Course.coursecode}}</td>
+         <td>{{fcourse.Course.coursetitle}}</td>
+        <td>{{fcourse.Course.LTPS_Struct}}</td>
+        <td>{{fcourse.Course.CourseCredits}}</td>
+        <td >{{fcourse.component}}</td>
+         <td >{{fcourse.section}}</td>
+
+        </td>
+    </tr>
+
+
+    {%   endfor   %}
+    </tbody>
+</table>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+{%  endblock  %}

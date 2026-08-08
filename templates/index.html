@@ -1,0 +1,51 @@
+{%  load static  %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PFSD SKILL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}"  />
+</head>
+<body >
+<nav class="navbar">
+
+     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/KL_University_logo.svg/1200px-KL_University_logo.svg.png"width="50"height="50"align="left"></img>
+<h2 align="center">Student Academic Management System</h2><br>
+      <ul class="nav-links">
+            <div class="menu">
+
+<li> <a href="{% url 'homes' %}">Home</a>&nbsp;&nbsp;&nbsp; </li>
+<li> <a href="{% url 'about' %}">About</a>&nbsp;&nbsp;&nbsp;</li>
+<li class="services">
+
+    <a href="#">Login</a>
+
+    <ul class="dropdown">
+            <li><a href="{% url 'studentlogin' %}">Student  </a></li>
+            <li><a href="{% url 'facultylogin' %}">Faculty</a></li>
+            <li><a href="{% url 'logins' %}">Login</a></li>
+
+          </ul>
+
+    &nbsp;&nbsp;&nbsp;</li>
+<li> <a href="{% url 'contact' %}">Contact us</a>&nbsp;&nbsp;&nbsp;</li>
+
+            </div>
+      </ul>
+</nav>
+<!--<div style="height:100vh;width:100%;background-image:url('/static/images/klef.jpg');background-size: 100% 100%; background-attachment:fixed;background-repeat:no-repeat">-->
+
+<!--</div>-->
+
+{%  block  'body' %}
+
+
+<center>
+<img  src="{%  static 'images/klu1.jpeg' %}" width="100%"height="90%" size="40m" style="overflow:hidden">
+    </center>
+{%  endblock %}
+
+
+
+</body>
+</html>
